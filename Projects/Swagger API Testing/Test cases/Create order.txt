@@ -1,0 +1,25 @@
+Title
+
+Create order
+
+Priority
+
+Prio 1
+
+Description
+
+As a user of Swagger I want to sell my pets
+
+Prerequisites
+
+Internet connection, Web Browser
+
+Steps to reproduce
+
+Open Postman
+Create new POST request with your order details
+Validate the response code and the status of the order in the response body to be sure that the order is created successfully
+
+Expected result
+
+A order to sell my pet is placed

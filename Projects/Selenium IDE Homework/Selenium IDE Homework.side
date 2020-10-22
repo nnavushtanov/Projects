@@ -1,0 +1,937 @@
+{
+  "id": "8ca5efab-1600-44e2-be00-44bff5370ae8",
+  "version": "2.0",
+  "name": "Selenium IDE Homework",
+  "url": "https://stage-forum.telerikacademy.com",
+  "tests": [{
+    "id": "18868716-ae7a-4bc4-adc9-abd8803d3d32",
+    "name": "Create topic from registered user",
+    "commands": [{
+      "id": "08daa54a-c5cd-4906-8a51-47e0a0ddf33e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6707b2f3-b1be-44c5-9342-af6460b12fef",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x964",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0273f841-1ee3-4590-9c83-ba827b80fbe3",
+      "comment": "Click on login button",
+      "command": "click",
+      "target": "css=.d-button-label",
+      "targets": [
+        ["css=.d-button-label", "css:finder"],
+        ["xpath=//div[@id='ember5']/header/div/div/div[2]/span/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3018a429-6702-48dd-8968-6c76af52498a",
+      "comment": "Fill user's email address",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "petkoivanov34@mail.bg"
+    }, {
+      "id": "9dbf613e-46a4-464f-b29e-c31aa7dbf635",
+      "comment": "Fill user's password",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "telerikacademy"
+    }, {
+      "id": "bafea7a0-e883-4118-bb65-327e61c7d68e",
+      "comment": "Click login button by pressing ENTER",
+      "command": "sendKeys",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "ea4bc183-46b4-4877-99c9-aef70be2f378",
+      "comment": "Click on \"New Topic\" button",
+      "command": "click",
+      "target": "id=create-topic",
+      "targets": [
+        ["id=create-topic", "id"],
+        ["css=#create-topic", "css:finder"],
+        ["xpath=//button[@id='create-topic']", "xpath:attributes"],
+        ["xpath=//section[@id='ember24']/button", "xpath:idRelative"],
+        ["xpath=//section/button", "xpath:position"],
+        ["xpath=//button[contains(.,'New Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3c52c81-f6bc-41a7-928b-1af1437aabf7",
+      "comment": "Click on title field and fill the field",
+      "command": "click",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember225']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b38f718-24da-4afb-bbb0-74d637ab49ce",
+      "comment": "Fill the title of the topic",
+      "command": "type",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember225']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Create new topic again for petko"
+    }, {
+      "id": "785b7ce2-40d8-4ce9-9d7e-b630604a5ac3",
+      "comment": "Click on the text area of the topic",
+      "command": "click",
+      "target": "xpath=//div[@class='d-editor-container']/div[1]/textarea",
+      "targets": [
+        ["id=ember284", "id"],
+        ["css=#ember284", "css:finder"],
+        ["xpath=//textarea[@id='ember284']", "xpath:attributes"],
+        ["xpath=//div[@id='ember252']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69e643cf-4682-43a8-9f45-584439a54cfe",
+      "comment": "Fill the content of the topic",
+      "command": "type",
+      "target": "xpath=//div[@class='d-editor-container']/div[1]/textarea",
+      "targets": [
+        ["id=ember284", "id"],
+        ["css=#ember284", "css:finder"],
+        ["xpath=//textarea[@id='ember284']", "xpath:attributes"],
+        ["xpath=//div[@id='ember252']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Content for the topic for petko"
+    }, {
+      "id": "599ea36d-7f88-434f-b302-530a3ef972f8",
+      "comment": "Click \"Create Topic\" button",
+      "command": "click",
+      "target": "xpath=//div[@class='save-or-cancel']/button",
+      "targets": [
+        ["css=#ember292 > .d-button-label", "css:finder"],
+        ["xpath=//button[@id='ember292']/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b235a4e0-e876-41a5-9539-86564c10a215",
+      "comment": "Assert that the topic is created by the title of it",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@class='title-wrapper']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0d3e223a-3a33-4483-b970-9024a0eb506b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f346c442-4076-48c1-8145-17a005503390",
+    "name": "Create topic wih less characters in title",
+    "commands": [{
+      "id": "70c95502-119a-490d-870b-49a96edda27d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "203eb953-81b5-49d3-9bba-219b921bbd41",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x964",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a8b0526-ea0a-4f36-8ac7-ad83e523d767",
+      "comment": "Click login button",
+      "command": "click",
+      "target": "css=.d-button-label",
+      "targets": [
+        ["css=.d-button-label", "css:finder"],
+        ["xpath=//div[@id='ember5']/header/div/div/div[2]/span/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41d0461f-97dc-4369-985c-b067102c5b0b",
+      "comment": "Click email login field",
+      "command": "click",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a8f30e6-8ffb-4896-a8d3-d91a762006ea",
+      "comment": "Type email",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "petkoivanov34@mail.bg"
+    }, {
+      "id": "31aaeabd-e3cb-486a-8600-06fc8e68327a",
+      "comment": "Click password field",
+      "command": "click",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3b9671b-6e4e-4ffa-b75c-b4b924d492e6",
+      "comment": "type password",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "telerikacademy"
+    }, {
+      "id": "f80747df-f0ab-4295-bb7d-3c6279e27bd1",
+      "comment": "Click \"Sign in\" button",
+      "command": "click",
+      "target": "id=next",
+      "targets": [
+        ["id=next", "id"],
+        ["css=#next", "css:finder"],
+        ["xpath=//button[@id='next']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31ba8282-e637-424d-b8b5-d748260a91c3",
+      "comment": "Click \"New topic\" button",
+      "command": "click",
+      "target": "css=.d-button-label:nth-child(2)",
+      "targets": [
+        ["css=.d-button-label:nth-child(2)", "css:finder"],
+        ["xpath=//button[@id='create-topic']/span", "xpath:idRelative"],
+        ["xpath=//section/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'New Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "77e5e03b-cbd7-4f5e-8c98-ade1bdbc7d15",
+      "comment": "Click on topic title",
+      "command": "click",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember223']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c073a85c-9052-4dfb-8422-bb70c03b0577",
+      "comment": "Fill topic title",
+      "command": "type",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember223']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Less"
+    }, {
+      "id": "cce8c3a7-dd10-429b-a21d-1100e522a0e3",
+      "comment": "Click on textarea",
+      "command": "click",
+      "target": "xpath=/html/body/section/div/div[7]/div[3]/div[2]/div/div/div[1]/textarea",
+      "targets": [
+        ["id=ember282", "id"],
+        ["css=#ember282", "css:finder"],
+        ["xpath=//textarea[@id='ember282']", "xpath:attributes"],
+        ["xpath=//div[@id='ember250']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7cd6b684-be53-4c09-99a2-b0a06e2afa0a",
+      "comment": "Fill topic content",
+      "command": "type",
+      "target": "xpath=/html/body/section/div/div[7]/div[3]/div[2]/div/div/div[1]/textarea",
+      "targets": [
+        ["id=ember282", "id"],
+        ["css=#ember282", "css:finder"],
+        ["xpath=//textarea[@id='ember282']", "xpath:attributes"],
+        ["xpath=//div[@id='ember250']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "asdasdasdasdasd"
+    }, {
+      "id": "63522160-4c0e-45d5-b080-acbbeadfa6d5",
+      "comment": "Click \"Create topic\" button",
+      "command": "click",
+      "target": "xpath=//div[@class='save-or-cancel']/button",
+      "targets": [
+        ["css=#ember290 > .d-button-label", "css:finder"],
+        ["xpath=//button[@id='ember290']/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "843e85c5-9509-4d44-bb2a-25b761a05b85",
+      "comment": "Wait for warning message",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[text() = 'Title must be at least 5 characters']",
+      "targets": [],
+      "value": "7000"
+    }, {
+      "id": "b889e408-03df-47ad-92d9-6486cc726601",
+      "comment": "Verify that the warning message is displayed",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*[text() = 'Title must be at least 5 characters']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "060f5f26-699f-43aa-ad0b-56d368ea0bac",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "045cab23-fd2c-46e3-a794-8440cfebd9f8",
+    "name": "Create topic wih less characters in textarea",
+    "commands": [{
+      "id": "b04d5ba4-2064-4c00-b779-8c2a3d85e48b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f4177c9-cb96-415b-8a3a-500957ebcad9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x964",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e41a0f45-7cf8-4f40-9648-03c7f350b76d",
+      "comment": "Click login button",
+      "command": "click",
+      "target": "css=.d-button-label",
+      "targets": [
+        ["css=.d-button-label", "css:finder"],
+        ["xpath=//div[@id='ember5']/header/div/div/div[2]/span/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cd04a34-b2cc-45d7-9226-ab0f8486218c",
+      "comment": "Click email login field",
+      "command": "click",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f667a103-221d-4985-87f7-e8d52f3acb29",
+      "comment": "Type email",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "petkoivanov34@mail.bg"
+    }, {
+      "id": "e4a4eaf3-05b2-4778-ba3d-036b089a5c3e",
+      "comment": "Click password field",
+      "command": "click",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "389c5615-c30f-4346-8c92-98d76a2fd87f",
+      "comment": "type password",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "telerikacademy"
+    }, {
+      "id": "dcaa7748-f666-4e79-88cb-f0387bd5773d",
+      "comment": "Click \"Sign in\" button",
+      "command": "click",
+      "target": "id=next",
+      "targets": [
+        ["id=next", "id"],
+        ["css=#next", "css:finder"],
+        ["xpath=//button[@id='next']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6622f806-a6c0-4a1f-b705-c8ddc6d6a5e6",
+      "comment": "Click \"New topic\" button",
+      "command": "click",
+      "target": "css=.d-button-label:nth-child(2)",
+      "targets": [
+        ["css=.d-button-label:nth-child(2)", "css:finder"],
+        ["xpath=//button[@id='create-topic']/span", "xpath:idRelative"],
+        ["xpath=//section/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'New Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78e90df1-63f6-49a5-9835-c2cb5670fece",
+      "comment": "Click on topic title",
+      "command": "click",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember223']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35882934-dc11-493b-beb7-051b517137a7",
+      "comment": "Fill topic title",
+      "command": "type",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember223']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Topic title"
+    }, {
+      "id": "9257dec6-2a99-4e4b-9f18-91faa6ad623b",
+      "comment": "Click on textarea",
+      "command": "click",
+      "target": "xpath=/html/body/section/div/div[7]/div[3]/div[2]/div/div/div[1]/textarea",
+      "targets": [
+        ["id=ember282", "id"],
+        ["css=#ember282", "css:finder"],
+        ["xpath=//textarea[@id='ember282']", "xpath:attributes"],
+        ["xpath=//div[@id='ember250']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8928b940-c231-4bc5-be92-9ef1f985ee74",
+      "comment": "Fill topic content",
+      "command": "type",
+      "target": "xpath=/html/body/section/div/div[7]/div[3]/div[2]/div/div/div[1]/textarea",
+      "targets": [
+        ["id=ember282", "id"],
+        ["css=#ember282", "css:finder"],
+        ["xpath=//textarea[@id='ember282']", "xpath:attributes"],
+        ["xpath=//div[@id='ember250']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Five"
+    }, {
+      "id": "29194417-2ea8-4819-9354-fd1d04a0a0ae",
+      "comment": "Click \"Create topic\" button",
+      "command": "click",
+      "target": "xpath=//div[@class='save-or-cancel']/button",
+      "targets": [
+        ["css=#ember290 > .d-button-label", "css:finder"],
+        ["xpath=//button[@id='ember290']/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1272d8c9-2e82-44a8-ba5e-ec2cd61d4725",
+      "comment": "Wait for warning message",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[text() = 'Post must be at least 10 characters']",
+      "targets": [],
+      "value": "7000"
+    }, {
+      "id": "97ec6364-e614-4a4e-8778-2bb8dd074e9a",
+      "comment": "Verify that the warning message is displayed",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*[text() = 'Post must be at least 10 characters']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba722571-9d44-45ba-9490-f83836e02102",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "2eb01dd7-17a6-41c8-888a-3754c10247db",
+    "name": "Create topic wihout characters in textarea",
+    "commands": [{
+      "id": "31175e55-7b14-4c56-bb7f-9d056ec10b4e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01ce2583-c378-4b44-b75b-1a1c783ceac1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x964",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76969dfc-ebe9-46cd-bdb9-73d2cd6807e2",
+      "comment": "Click login button",
+      "command": "click",
+      "target": "css=.d-button-label",
+      "targets": [
+        ["css=.d-button-label", "css:finder"],
+        ["xpath=//div[@id='ember5']/header/div/div/div[2]/span/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7db3f87f-efde-4085-8069-588edf977ab0",
+      "comment": "Click email login field",
+      "command": "click",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30d93122-7498-4366-9eab-7385798b443e",
+      "comment": "Type email",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "petkoivanov34@mail.bg"
+    }, {
+      "id": "25f3cdcb-f2b0-4d6f-a0e6-b13e16bd6f81",
+      "comment": "Click password field",
+      "command": "click",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "218c74e6-d4cb-485a-b9f2-2c67ce495a19",
+      "comment": "type password",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "telerikacademy"
+    }, {
+      "id": "3f3270b0-4df8-4ecd-b9b5-bd449d673498",
+      "comment": "Click \"Sign in\" button",
+      "command": "click",
+      "target": "id=next",
+      "targets": [
+        ["id=next", "id"],
+        ["css=#next", "css:finder"],
+        ["xpath=//button[@id='next']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23c9736e-d6a5-4cc5-8876-289def3e2c9f",
+      "comment": "Click \"New topic\" button",
+      "command": "click",
+      "target": "css=.d-button-label:nth-child(2)",
+      "targets": [
+        ["css=.d-button-label:nth-child(2)", "css:finder"],
+        ["xpath=//button[@id='create-topic']/span", "xpath:idRelative"],
+        ["xpath=//section/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'New Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad49a478-c39d-46e1-8bb2-8f60617c6fe7",
+      "comment": "Click on topic title",
+      "command": "click",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember223']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "591cda82-fad3-4ccd-846b-03dac23029c8",
+      "comment": "Fill topic title",
+      "command": "type",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember223']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Topic title"
+    }, {
+      "id": "c0ff8cc1-70ca-4f3a-86d5-ac6e7a4136ec",
+      "comment": "Click on textarea",
+      "command": "click",
+      "target": "xpath=/html/body/section/div/div[7]/div[3]/div[2]/div/div/div[1]/textarea",
+      "targets": [
+        ["id=ember282", "id"],
+        ["css=#ember282", "css:finder"],
+        ["xpath=//textarea[@id='ember282']", "xpath:attributes"],
+        ["xpath=//div[@id='ember250']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "721b6bc9-1de6-4637-b50b-f3848af5fd49",
+      "comment": "Fill topic content",
+      "command": "type",
+      "target": "xpath=/html/body/section/div/div[7]/div[3]/div[2]/div/div/div[1]/textarea",
+      "targets": [
+        ["id=ember282", "id"],
+        ["css=#ember282", "css:finder"],
+        ["xpath=//textarea[@id='ember282']", "xpath:attributes"],
+        ["xpath=//div[@id='ember250']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6eac743f-2736-4e57-b8f7-5d18d995d334",
+      "comment": "Click \"Create topic\" button",
+      "command": "click",
+      "target": "xpath=//div[@class='save-or-cancel']/button",
+      "targets": [
+        ["css=#ember290 > .d-button-label", "css:finder"],
+        ["xpath=//button[@id='ember290']/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f20f63a4-6af8-446a-ba5d-b8f8ddc197e5",
+      "comment": "Wait for warning message",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[text() = 'Post can’t be empty']",
+      "targets": [],
+      "value": "7000"
+    }, {
+      "id": "3949997b-bc7f-4f74-8e97-b2c55de3b80d",
+      "comment": "Verify that the warning message is displayed",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*[text() = 'Post can’t be empty']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd372faa-0c9b-4566-8093-76c1938943f7",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "60a6cdbb-67b2-461a-9b27-66c77f5ab541",
+    "name": "Create topic wihout characters in title",
+    "commands": [{
+      "id": "6e035432-e9ff-4e56-a131-3ea5b72f20b0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba7ecd5b-2077-40ff-b67c-965a5932926a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x964",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd8432e9-98bd-43ac-abc2-1ca7822cdda9",
+      "comment": "Click login button",
+      "command": "click",
+      "target": "css=.d-button-label",
+      "targets": [
+        ["css=.d-button-label", "css:finder"],
+        ["xpath=//div[@id='ember5']/header/div/div/div[2]/span/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4b6ea3b-8106-4e61-912f-bad7dd86c511",
+      "comment": "Click email login field",
+      "command": "click",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a57d759-fba9-46d2-a9a3-97df134ea42f",
+      "comment": "Type email",
+      "command": "type",
+      "target": "id=Email",
+      "targets": [
+        ["id=Email", "id"],
+        ["name=Email", "name"],
+        ["css=#Email", "css:finder"],
+        ["xpath=//input[@id='Email']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "petkoivanov34@mail.bg"
+    }, {
+      "id": "4ad1658c-2e44-4d62-b526-7f86680e5161",
+      "comment": "Click password field",
+      "command": "click",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "81c081ed-c35b-44eb-8875-4ba916cbdf82",
+      "comment": "type password",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "telerikacademy"
+    }, {
+      "id": "17d53535-aae7-4b2c-bef2-695fe60f96c9",
+      "comment": "Click \"Sign in\" button",
+      "command": "click",
+      "target": "id=next",
+      "targets": [
+        ["id=next", "id"],
+        ["css=#next", "css:finder"],
+        ["xpath=//button[@id='next']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b37a9386-9a56-43af-973f-4a1e91a742c3",
+      "comment": "Click \"New topic\" button",
+      "command": "click",
+      "target": "css=.d-button-label:nth-child(2)",
+      "targets": [
+        ["css=.d-button-label:nth-child(2)", "css:finder"],
+        ["xpath=//button[@id='create-topic']/span", "xpath:idRelative"],
+        ["xpath=//section/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'New Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b64330f8-6c2e-4665-8da3-58017e116dff",
+      "comment": "Click on topic title",
+      "command": "click",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember223']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df1b212f-c79a-4f16-b3d2-8ac8a1cb3a9a",
+      "comment": "Fill topic title",
+      "command": "type",
+      "target": "id=reply-title",
+      "targets": [
+        ["id=reply-title", "id"],
+        ["css=#reply-title", "css:finder"],
+        ["xpath=//input[@id='reply-title']", "xpath:attributes"],
+        ["xpath=//div[@id='ember223']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "da1adf35-c8ec-4313-bf41-211e4ec9c9a5",
+      "comment": "Click on textarea",
+      "command": "click",
+      "target": "xpath=/html/body/section/div/div[7]/div[3]/div[2]/div/div/div[1]/textarea",
+      "targets": [
+        ["id=ember282", "id"],
+        ["css=#ember282", "css:finder"],
+        ["xpath=//textarea[@id='ember282']", "xpath:attributes"],
+        ["xpath=//div[@id='ember250']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a402ec70-2c15-4e91-bb5d-224c1e82c002",
+      "comment": "Fill topic content",
+      "command": "type",
+      "target": "xpath=/html/body/section/div/div[7]/div[3]/div[2]/div/div/div[1]/textarea",
+      "targets": [
+        ["id=ember282", "id"],
+        ["css=#ember282", "css:finder"],
+        ["xpath=//textarea[@id='ember282']", "xpath:attributes"],
+        ["xpath=//div[@id='ember250']/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "asdasdasdasdasd"
+    }, {
+      "id": "0bade6ca-b775-4e0b-a06b-b5f04c3e26ac",
+      "comment": "Click \"Create topic\" button",
+      "command": "click",
+      "target": "xpath=//div[@class='save-or-cancel']/button",
+      "targets": [
+        ["css=#ember290 > .d-button-label", "css:finder"],
+        ["xpath=//button[@id='ember290']/span", "xpath:idRelative"],
+        ["xpath=//div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Create Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5029b26a-b8e2-40b1-aa7a-16e5060bbd32",
+      "comment": "Wait for warning message",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*[text() = 'Title is required']",
+      "targets": [],
+      "value": "7000"
+    }, {
+      "id": "43815093-a312-4c7c-9e0f-1aa4c9b5337f",
+      "comment": "Verify that the warning message is displayed",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*[text() = 'Title is required']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4769a3ed-972c-4141-9b57-e14bcd00fee6",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "dc7366e7-5a0d-46ed-9cff-ec3ab8034131",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["18868716-ae7a-4bc4-adc9-abd8803d3d32"]
+  }],
+  "urls": ["https://stage-forum.telerikacademy.com/"],
+  "plugins": []
+}

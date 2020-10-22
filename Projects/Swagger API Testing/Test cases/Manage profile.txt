@@ -1,0 +1,26 @@
+Title
+
+Manage profile
+
+Priority
+
+Prio 1
+
+Description
+
+As a user I want to be able to register to Swagger to sell or buy pets
+
+Prerequisites
+
+Internet connection, Web Browser
+
+Steps to reproduce
+
+Open Postman
+Create new POST request with your profile details
+Validate the response code and the code in the response body in order to be sure that the user is created successfully
+If everything above is correct login to your new profile with GET request
+
+Expected result
+
+A profile with my username, password is created and I can login to it

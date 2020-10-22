@@ -1,0 +1,1 @@
+Testing Telerik Academy's forum functionality with Sikuli

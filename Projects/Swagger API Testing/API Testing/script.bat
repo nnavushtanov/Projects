@@ -1,0 +1,1 @@
+newman run Swagger_petstore.postman_collection.json -e Swagger_environment.json >> report.log

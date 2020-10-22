@@ -1,0 +1,1 @@
+newman run Trello-API-Testing.postman_collection.json -e Trello.postman_environment.json >> report.log

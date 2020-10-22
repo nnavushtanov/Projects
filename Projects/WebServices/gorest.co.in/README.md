@@ -1,0 +1,1 @@
+Creating new user and testing other functionalities of https://gorest.co.in with Postman

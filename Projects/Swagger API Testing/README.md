@@ -1,0 +1,1 @@
+Testing https://petstore.swagger.io API requests

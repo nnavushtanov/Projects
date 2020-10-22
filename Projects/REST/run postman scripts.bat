@@ -1,0 +1,1 @@
+newman run Tests.postman_collection.json -e reqres.in.postman_environment.json >> REST_reports.log

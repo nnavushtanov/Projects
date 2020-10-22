@@ -1,0 +1,1 @@
+Creation of new board, creation of new lists inside and creating and moving one card between the two lists

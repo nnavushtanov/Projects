@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "c4755f34-2bbd-4d85-856d-0e51ee049718",
+		"name": "Tests",
+		"description": "Testing https://www.reqres.in requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create and update user",
+			"item": [
+				{
+					"name": "create new user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "553f586c-fc95-40a4-ab56-6f59dcf36c2a",
+								"exec": [
+									"pm.test(\"Check user name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql(\"Evstati\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Evstati\",\r\n    \"job\": \"QA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/users",
+						"description": "create new user"
+					},
+					"response": []
+				},
+				{
+					"name": "update job title",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c05b7dbe-d0e7-42dd-a486-ade289f72a28",
+								"exec": [
+									"pm.test(\"Is job title updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.job).to.eql(\"QA Team Lead\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Evstati\",\r\n    \"job\": \"QA Team Lead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/users",
+						"description": "update job title of user"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "simple requests",
+			"item": [
+				{
+					"name": "create new user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6ace3e55-1d35-479f-a7e6-82123bca9941",
+								"exec": [
+									"pm.test(\"Return correct name and job title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql(\"pesho\");\r",
+									"    pm.expect(jsonData.job).to.eql(\"variable\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"pesho\",\r\n    \"job\": \"variable\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/users",
+						"description": "create new user and check if its created properly"
+					},
+					"response": []
+				},
+				{
+					"name": "userCount",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e7c72308-ed2f-4cae-a59f-c87f9ab10b94",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check if returned users are 6 per page\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.per_page).to.eql(6);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users?page=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Checking if the response is returning 6 users per page"
+					},
+					"response": []
+				},
+				{
+					"name": "check full name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aaa62974-350b-4ec2-b0e5-5d58684b39fa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Checking full name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.first_name).to.eql(\"George\");\r",
+									"    pm.expect(jsonData.data.last_name).to.eql(\"Bluth\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/api/users/1",
+						"description": "Checking if the server is returning the correct full name of the user"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "37391a3a-1b19-492d-8477-fce75e34212a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "73410d4d-f52f-4937-b297-859ddd2d0795",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "04cef570-2ba6-416e-9829-710d6b4221cb",
+			"key": "baseUrl",
+			"value": "https://reqres.in"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

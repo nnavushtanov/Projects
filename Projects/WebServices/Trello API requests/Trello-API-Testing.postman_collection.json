@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "ea700639-9df4-4c12-9f74-a281603eb6fd",
+		"name": "Trello API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "40178d93-41b8-4a49-bd37-8da4c07b55a8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set(\"boardId\" , pm.response.json().id);\r",
+							"\r",
+							"pm.test(\"Board is created successfully\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var board = pm.collectionVariables.get(\"boardId\");\r",
+							"    pm.expect(jsonData.id).to.eql(board);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/boards/?key={{apiKey}}&token={{token}}&name=FirstBoard&defaultLists=false",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apiKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "name",
+							"value": "FirstBoard"
+						},
+						{
+							"key": "defaultLists",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create TODO List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "13cec013-48b7-44ae-ae63-51cb65c5a0be",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set(\"toDoListID\" , pm.response.json().id);\r",
+							"\r",
+							"pm.test(\"TODO List created successfully\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var list = pm.collectionVariables.get(\"toDoListID\")\r",
+							"    pm.expect(jsonData.id).to.eql(list);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/lists?key={{apiKey}}&token={{token}}&name=ToDoList&idBoard={{boardId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"lists"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apiKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "name",
+							"value": "ToDoList"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{boardId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create DONE List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8079d0c9-dfdd-468b-983b-44f0c61db752",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set(\"doneListID\" , pm.response.json().id);\r",
+							"\r",
+							"pm.test(\"Done List created successfully\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var list = pm.collectionVariables.get(\"doneListID\")\r",
+							"    pm.expect(jsonData.id).to.eql(list);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/lists?key={{apiKey}}&token={{token}}&name=Done&idBoard={{boardId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"lists"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apiKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "name",
+							"value": "Done"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{boardId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87a0e23d-708b-491a-8d80-06de3eed4baf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set(\"cardId\" , pm.response.json().id);\r",
+							"\r",
+							"pm.test(\"Card is created successfully\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var card = pm.collectionVariables.get(\"cardId\")\r",
+							"    pm.expect(jsonData.id).to.eql(card);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/cards?key={{apiKey}}&token={{token}}&idList={{toDoListID}}&name=CARD",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apiKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "idList",
+							"value": "{{toDoListID}}"
+						},
+						{
+							"key": "name",
+							"value": "CARD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ffbbad8-a6e3-40fd-8809-7ef284585a18",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Card is moved successfully\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var newList = pm.collectionVariables.get(\"doneListID\");\r",
+							"    pm.expect(jsonData.idList).to.eql(newList);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/cards/{{cardId}}?idList={{doneListID}}&key={{apiKey}}&token={{token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cards",
+						"{{cardId}}"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "{{doneListID}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apiKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "af269ecb-68e2-45bc-884f-059a322d3f26",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Board is deleted successfully\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData._value).to.eql(null);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/boards/{{boardId}}?key={{apiKey}}&token={{token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"boards",
+						"{{boardId}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apiKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e9712350-0a83-428b-81f9-33e494621d43",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "31a941de-cffe-45fd-9019-d8a7ceac777d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9e09ece8-aedd-483e-b6ea-235d94f0fe89",
+			"key": "boardId",
+			"value": ""
+		},
+		{
+			"id": "8c778957-c1b4-4713-a76a-12f8d5478b58",
+			"key": "toDoListID",
+			"value": ""
+		},
+		{
+			"id": "edf0ef1d-722d-4d42-aaf5-df4978d4532a",
+			"key": "doneListID",
+			"value": ""
+		},
+		{
+			"id": "c8e5b878-88d1-496b-8f79-0e6ccfdfec38",
+			"key": "cardId",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}

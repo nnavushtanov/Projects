@@ -1,0 +1,53 @@
+newman
+
+Trello API Testing
+
+→ Create board
+  POST https://api.trello.com/1/boards/?key=bd5818825884f6a8da2120c22d188927&token=352e34c62d69cb998b525664df189b46d979f4444670859505d4a669d2ca162a&name=FirstBoard&defaultLists=false [200 OK, 2.42KB, 376ms]
+  √  Status code is 200
+  √  Board is created successfully
+
+→ Create TODO List
+  POST https://api.trello.com/1/lists?key=bd5818825884f6a8da2120c22d188927&token=352e34c62d69cb998b525664df189b46d979f4444670859505d4a669d2ca162a&name=ToDoList&idBoard=5f8ddbae0f363507ee02169c [200 OK, 1.66KB, 196ms]
+  √  Status code is 200
+  √  TODO List created successfully
+
+→ Create DONE List
+  POST https://api.trello.com/1/lists?key=bd5818825884f6a8da2120c22d188927&token=352e34c62d69cb998b525664df189b46d979f4444670859505d4a669d2ca162a&name=Done&idBoard=5f8ddbae0f363507ee02169c [200 OK, 1.65KB, 200ms]
+  √  Status code is 200
+  √  Done List created successfully
+
+→ Create card
+  POST https://api.trello.com/1/cards?key=bd5818825884f6a8da2120c22d188927&token=352e34c62d69cb998b525664df189b46d979f4444670859505d4a669d2ca162a&idList=5f8ddbaeebd4ec5689185136&name=CARD [200 OK, 2.59KB, 296ms]
+  √  Status code is 200
+  √  Card is created successfully
+
+→ Move card
+  PUT https://api.trello.com/1/cards/5f8ddbafc104bf4da9cf31c5?idList=5f8ddbaf6100f64ccda00bb7&key=bd5818825884f6a8da2120c22d188927&token=352e34c62d69cb998b525664df189b46d979f4444670859505d4a669d2ca162a [200 OK, 2.54KB, 603ms]
+  √  Status code is 200
+  √  Card is moved successfully
+
+→ Delete board
+  DELETE https://api.trello.com/1/boards/5f8ddbae0f363507ee02169c?key=bd5818825884f6a8da2120c22d188927&token=352e34c62d69cb998b525664df189b46d979f4444670859505d4a669d2ca162a [200 OK, 1.55KB, 414ms]
+  √  Status code is 200
+  √  Board is deleted successfully
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   1 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                   6 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                  12 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   6 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                  12 │                  0 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 2.5s                                           │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 3.21KB (approx)                               │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 347ms [min: 196ms, max: 603ms, s.d.: 140ms] │
+└────────────────────────────────────────────────────────────────────┘
